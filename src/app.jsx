@@ -1,7 +1,8 @@
 import "./app.css";
+import Country from "./components/country";
 
 function App() {
-  return <h1>Hello</h1>;
+  return <Country />;
 }
 
 export default App;
