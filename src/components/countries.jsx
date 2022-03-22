@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Country from "./country";
+import InputAddForm from "./inputAddForm";
 
 export default class Countries extends Component {
   handleIncreament = (country) => {
@@ -16,17 +17,20 @@ export default class Countries extends Component {
 
   render() {
     return (
-      <ul className="countries">
-        {this.props.countries.map((country) => (
-          <Country
-            key={country.id}
-            country={country}
-            onIncrease={this.handleIncreament}
-            onDecrease={this.handleDecreament}
-            onDelete={this.handelDelete}
-          />
-        ))}
-      </ul>
+      <>
+        <InputAddForm />
+        <ul className="countries">
+          {this.props.countries.map((country) => (
+            <Country
+              key={country.id}
+              country={country}
+              onIncrease={this.handleIncreament}
+              onDecrease={this.handleDecreament}
+              onDelete={this.handelDelete}
+            />
+          ))}
+        </ul>
+      </>
     );
   }
 }
