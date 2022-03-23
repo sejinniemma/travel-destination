@@ -122,3 +122,9 @@ button {
 .country-delete {
   color: rgb(165, 33, 33);
 }
+
+.reset {
+  background-color: rgb(165, 33, 33);
+  color: white;
+  text-align: center;
+}

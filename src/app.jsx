@@ -54,6 +54,14 @@ class App extends Component {
     this.setState({ countries });
   };
 
+  handleAdd = (value) => {
+    const countries = [
+      ...this.state.countries,
+      { id: Date.now(), name: value, count: 0 },
+    ];
+    this.setState({ countries });
+  };
+
   render() {
     return (
       <>
@@ -67,6 +75,7 @@ class App extends Component {
           onIncrease={this.handleIncreament}
           onDecrease={this.handleDecreament}
           onDelete={this.handelDelete}
+          onAdd={this.handleAdd}
         />
       </>
     );

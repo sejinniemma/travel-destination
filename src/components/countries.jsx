@@ -11,14 +11,18 @@ export default class Countries extends Component {
     this.props.onDecrease(country);
   };
 
-  handelDelete = (country) => {
+  handleDelete = (country) => {
     this.props.onDelete(country);
+  };
+
+  handleAdd = (value) => {
+    this.props.onAdd(value);
   };
 
   render() {
     return (
       <>
-        <InputAddForm />
+        <InputAddForm onAdd={this.handleAdd} />
         <ul className="countries">
           {this.props.countries.map((country) => (
             <Country
@@ -26,10 +30,11 @@ export default class Countries extends Component {
               country={country}
               onIncrease={this.handleIncreament}
               onDecrease={this.handleDecreament}
-              onDelete={this.handelDelete}
+              onDelete={this.handleDelete}
             />
           ))}
         </ul>
+        <button className="reset">reset</button>
       </>
     );
   }

@@ -6,7 +6,6 @@ export default class InputAddForm extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     const value = this.inputRef.current.value;
-    console.log(value);
     this.props.onAdd(value);
     this.inputRef.current.value = "";
   };
